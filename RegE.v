@@ -1,3 +1,4 @@
+//Register connecting the Decode and Execute stages 
 module RegE (
 input               rst_n,
 input               RegWriteD,
@@ -25,33 +26,33 @@ always@(posedge CLK or negedge rst_n)
 begin
     if (CLR | ~rst_n)
         begin
-            RegWriteE<=0;
-            MemToRegE<=0;
-            MemWriteE<=0;
+            RegWriteE  <=0;
+            MemToRegE  <=0;
+            MemWriteE  <=0;
             ALUControlE<=0;
-            ALUSrcE<=0;
-            RegDstE<=0;
-            RD1E<=0;
-            RD2E<=0;
-            RsE<=0;
-            RtE<=0;
-            RdE<=0;
-            SignImmE<=0;
+            ALUSrcE    <=0;
+            RegDstE    <=0;
+            RD1E       <=0;
+            RD2E       <=0;
+            RsE        <=0;
+            RtE        <=0;
+            RdE        <=0;
+            SignImmE   <=0;
         end
     else 
         begin
-            RegWriteE<=RegWriteD;
-            MemToRegE<=MemToRegD;
-            MemWriteE<=MemWriteD;
-            ALUControlE<=ALUControlD;
-            ALUSrcE<=ALUSrcD;
-            RegDstE<=RegDstD;
-            RD1E<=RD1D;
-            RD2E<=RD2D;
-            RsE<=RsD;
-            RtE<=RtD;
-            RdE<=RdD;
-            SignImmE<=SignImmD;
+            RegWriteE   <= RegWriteD;
+            MemToRegE   <= MemToRegD;
+            MemWriteE   <= MemWriteD;
+            ALUControlE <= ALUControlD;
+            ALUSrcE     <= ALUSrcD;
+            RegDstE     <= RegDstD;
+            RD1E        <= RD1D;
+            RD2E        <= RD2D;
+            RsE         <= RsD;
+            RtE         <= RtD;
+            RdE         <= RdD;
+            SignImmE    <= SignImmD;
 
         end
 end
