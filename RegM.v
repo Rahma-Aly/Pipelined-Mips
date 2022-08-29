@@ -1,3 +1,4 @@
+//register connecting the execute and memory stages
 module RegM (
 input                   rst_n,
 input                   RegWriteE,
@@ -19,21 +20,21 @@ always@(posedge CLK or negedge rst_n)
 begin
     if (~rst_n)
     begin
-    RegWriteM <= 1'b0;
-    MemToRegM <= 1'b0;
-    MemWriteM <= 1'b0;
-    ALUOutM   <= 32'b0;
-    WritedataM<= 32'b0;
-    WriteRegM <= 5'b0;  
+    RegWriteM  <= 1'b0;
+    MemToRegM  <= 1'b0;
+    MemWriteM  <= 1'b0;
+    ALUOutM    <= 32'b0;
+    WritedataM <= 32'b0;
+    WriteRegM  <= 5'b0;  
     end
     else
     begin
-    RegWriteM <= RegWriteE;
-    MemToRegM <= MemToRegE;
-    MemWriteM <= MemWriteE;
-    ALUOutM   <= ALUOutE;
-    WritedataM<= WritedataE;
-    WriteRegM <= WriteRegE;
+    RegWriteM  <= RegWriteE;
+    MemToRegM  <= MemToRegE;
+    MemWriteM  <= MemWriteE;
+    ALUOutM    <= ALUOutE;
+    WritedataM <= WritedataE;
+    WriteRegM  <= WriteRegE;
     end
 end
 
