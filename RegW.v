@@ -1,3 +1,4 @@
+//register connecting the memory and write back stages
 module RegW(
 input               CLK,rst_n,
 input   [31:0]      ALUOutM,
